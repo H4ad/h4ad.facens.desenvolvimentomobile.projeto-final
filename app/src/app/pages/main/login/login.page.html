@@ -1,0 +1,36 @@
+<div class="login">
+  <div class="bird--header-create">
+    <div class="bird--header-create--detail"></div>
+
+    <h1>Entrar</h1>
+    <p>Bem-vindo, digite seu e-mail e senha para entrar:</p>
+  </div>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="bird--input">
+      <ion-icon name="mail-outline"></ion-icon>
+      <input formControlName="username" placeholder="Seu e-mail" type="email">
+    </div>
+
+    <div class="bird--input">
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      <input formControlName="password" placeholder="Sua senha" type="password">
+    </div>
+
+    <div class="login--register">
+      <p>
+        Não tem conta? <br>
+        <a routerLink="/main/register">Clique aqui</a> para registrar-se
+      </p>
+    </div>
+
+    <div class="login--buttons">
+      <button class="bird--send-button ion-activatable"
+              [disabled]="formGroup.status === 'INVALID' || isSendingForm"
+              type="submit">
+        <ion-ripple-effect></ion-ripple-effect>
+        <span>Entrar</span>
+        <ion-icon src="assets/images/right-arrow-white.svg"></ion-icon>
+      </button>
+    </div>
+  </form>
+</div>

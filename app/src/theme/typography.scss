@@ -1,0 +1,13 @@
+.bird--nowrap {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--app-primary);
+}
+
+p {
+  margin-bottom: 0;
+}

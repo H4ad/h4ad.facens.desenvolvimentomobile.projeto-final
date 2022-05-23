@@ -1,0 +1,54 @@
+<div class="register">
+  <div class="bird--header-create">
+    <div class="bird--header-create--detail"></div>
+
+    <h1>Criar Conta</h1>
+    <p>Por favor, preencha os campos abaixo:</p>
+  </div>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="bird--input">
+      <ion-icon name="person-outline"></ion-icon>
+      <input formControlName="name" placeholder="Seu nome" type="text">
+    </div>
+
+    <div class="bird--input">
+      <ion-icon name="mail-outline"></ion-icon>
+      <input formControlName="email" placeholder="Seu e-mail" type="email">
+    </div>
+
+    <div class="register--avatar">
+      <ng-container *ngFor="let avatar of listAvatars; let i = index">
+        <div class="register--avatar--item--container"
+             (click)="formGroup.controls['personAvatarIndex'].setValue(i)">
+
+          <div [style.background-color]="avatar.personColor"
+               [class.register--avatar--item--selected]="formGroup.controls['personAvatarIndex'].value === i"
+               class="register--avatar--item ion-activatable">
+            <ion-ripple-effect></ion-ripple-effect>
+            <img [src]="avatar.personEmoji" alt="A imagem do personagem">
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="bird--input">
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      <input formControlName="password" placeholder="Sua senha" type="password">
+    </div>
+
+    <div class="register--buttons">
+      <button [routerLink]="['/main/login']" class="bird--back-button ion-activatable">
+
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-icon src="assets/images/left-arrow.svg"></ion-icon>
+      </button>
+      <button class="bird--send-button ion-activatable ripple-parent"
+              [disabled]="formGroup.status === 'INVALID' || isSendingForm"
+              type="submit">
+        <ion-ripple-effect></ion-ripple-effect>
+        <span>Criar</span>
+        <ion-icon src="assets/images/right-arrow-white.svg"></ion-icon>
+      </button>
+    </div>
+  </form>
+</div>

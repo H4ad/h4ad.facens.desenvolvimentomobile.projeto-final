@@ -1,0 +1,79 @@
+.bird--add-item {
+  border: 2px dashed var(--app-primary-dark);
+  border-radius: 25px;
+  padding: 1.6rem .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  position: relative;
+  overflow: hidden;
+
+  ion-icon {
+    font-size: 5rem;
+    margin-right: 1rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+    color: var(--app-primary);
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+.bird--back-button {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+
+  background-color: var(--app-primary-dark);
+
+  height: 6rem;
+  width: 6rem;
+
+  outline: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ion-icon {
+    font-size: 1.6rem;
+  }
+}
+
+.bird--send-button {
+  background: linear-gradient(180deg, #40DF9F 0%, #3ED598 100%);
+  box-shadow: 0 2px 4px rgba(15, 218, 137, 0.3);
+  border-radius: 12px;
+
+  width: var(--send-button-width, 100%);
+  height: 6rem;
+
+  position: relative;
+  overflow: hidden;
+  outline: none;
+
+  color: var(--app-light);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ion-icon {
+    font-size: 1.6rem;
+  }
+
+  &[disabled] {
+    opacity: .5;
+    cursor: none;
+    pointer-events: none;
+  }
+
+  span {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-right: .8rem;
+  }
+}
