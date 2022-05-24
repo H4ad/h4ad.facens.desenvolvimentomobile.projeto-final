@@ -4,10 +4,10 @@ Esse repositório irá conter todos os arquivos do projeto final.
 
 ## Grupo
 
-- Kennedy Corrêa - 160080
-- Leonardo P. Bottaro - 180043
-- Marcelo Zaguette Junior - 180998
-- Matheus Jesus Tartaglia - 180112
+- Kennedy Corrêa - 160080 - (PA038TIN1)
+- Leonardo P. Bottaro - 180043 - (CP110TIN3)
+- Marcelo Zaguette Junior - 180998 - (CP303TIN3 e PA038TIN1)
+- Matheus Jesus Tartaglia - 180112 - (CP110TIN3)
 - Vinícius Lourenço Claro Cardoso - 180618 - (CP110TIN3)
 
 ## Aplicativo
