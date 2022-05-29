@@ -1,0 +1,24 @@
+.freelancers {
+  padding: 2.4rem;
+  max-height: 100%;
+  overflow-y: auto;
+
+  &--item {
+    width: calc(50% - 1.2rem);
+    margin-bottom: 2.4rem;
+
+    &:nth-child(2n) {
+      margin-right: 2.4rem;
+    }
+
+    &:first-child {
+      width: 100%;
+    }
+  }
+
+  app-freelancer-item {
+    margin-top: 2.4rem;
+    display: flex;
+    margin-bottom: 1.6rem;
+  }
+}

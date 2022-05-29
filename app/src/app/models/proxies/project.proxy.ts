@@ -66,9 +66,9 @@ export function getFakeProjectProxy(): ProjectProxy {
     email: '180618@facens.br',
     personName: randFullName(),
     personColor: rand(['#FF565E', '#3ED598', '#FFC542']),
+    personEmoji: `/assets/images/avatar_${ randNumber({ min: 1, max: 4, precision: 1, fraction: 1 }) }.png`,
     message: randParagraph({ length: 2 }).join('. '),
     createdAt: new Date().toISOString(),
-    personEmoji: `/assets/images/avatar_${ randNumber({ min: 1, max: 4, precision: 1, fraction: 1 }) }.png`,
     budget: randNumber({ min: 200, max: 500, fraction: 1, precision: 1 }),
     category: getFakeCategoryProxy(),
   };

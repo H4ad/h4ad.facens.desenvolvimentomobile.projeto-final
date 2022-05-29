@@ -1,0 +1,13 @@
+<div class="freelancers" (scroll)="onScroll($event)">
+  <div class="freelancers--item">
+    <div routerLink="/main/freelancers/me" class="app--add-item ion-activatable">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-icon src="assets/images/add_icon.svg"></ion-icon>
+      <p>Atualizar minhas informações</p>
+    </div>
+  </div>
+
+  <ng-container *ngFor="let freelancer of listAllFreelancers; trackBy: trackById">
+    <app-freelancer-item [content]="freelancer"></app-freelancer-item>
+  </ng-container>
+</div>

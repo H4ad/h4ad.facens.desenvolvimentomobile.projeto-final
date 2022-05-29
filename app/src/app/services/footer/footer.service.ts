@@ -36,7 +36,7 @@ export class FooterService {
       if (currentUrl.startsWith('/login'))
         return this.selectedFooterSubject.next(FooterState.PROJECTS);
 
-      if (currentUrl.startsWith('/main/freelances'))
+      if (currentUrl.startsWith('/main/freelancers'))
         return this.selectedFooterSubject.next(FooterState.FREELANCERS);
     });
   }
