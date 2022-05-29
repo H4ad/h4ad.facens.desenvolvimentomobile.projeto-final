@@ -7,7 +7,7 @@ import { map, throttleTime } from 'rxjs/operators';
 import { TrackablePage } from '../../../common/trackable.page';
 import { PaginatedProjectProxy } from '../../../models/proxies/paginated-project.proxy';
 import { ProjectProxy } from '../../../models/proxies/project.proxy';
-import { ProjectService } from '../../../services/comment/project.service';
+import { ProjectService } from '../../../services/project/project.service';
 
 //#endregion
 
@@ -27,10 +27,12 @@ export class ProjectsByCategoriesPage extends TrackablePage implements OnInit, O
    * Construtor padrão
    */
   constructor(
-    protected readonly comment: ProjectService,
+    protected readonly project: ProjectService,
     protected readonly route: ActivatedRoute,
   ) {
     super();
+
+    this.categoryId = Number(this.route.snapshot.paramMap.get('categoryId'));
 
     this.currentScrollSubscription = this.currentScrollFrameSubject.pipe(
       throttleTime(16),
@@ -81,6 +83,11 @@ export class ProjectsByCategoriesPage extends TrackablePage implements OnInit, O
    */
   public isLoadingProjects: boolean = false;
 
+  /**
+   * A categoria selecionada atualmente
+   */
+  public readonly categoryId: number;
+
   //#endregion
 
   //#region LifeCycle Events
@@ -116,9 +123,8 @@ export class ProjectsByCategoriesPage extends TrackablePage implements OnInit, O
     this.isLoadingProjects = true;
 
     const currentPage = this.paginatedProject?.currentPage || 0;
-    const categoryId = Number(this.route.snapshot.paramMap.get('categoryId'));
 
-    this.paginatedProject = await this.comment.getProjectsByCategoryId(categoryId, currentPage + 1, 4);
+    this.paginatedProject = await this.project.getProjectsByCategoryId(this.categoryId, currentPage + 1, 4);
     this.listProjects = [...this.listProjects, ...this.paginatedProject.items];
 
     this.isLoadingProjects = false;

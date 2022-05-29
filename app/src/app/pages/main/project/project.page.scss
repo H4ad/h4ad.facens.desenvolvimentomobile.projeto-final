@@ -1,0 +1,103 @@
+.project {
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem;
+
+  min-width: 100%;
+
+  &--head,
+  &--body {
+    background: var(--app-dark);
+    box-shadow: 0 1px 14px #19282F;
+    border-radius: 25px;
+    padding: 1.6rem;
+
+    margin-bottom: 1.6rem;
+  }
+
+  &--head {
+    display: flex;
+    align-items: center;
+
+    &--avatar {
+      height: 4.8rem;
+      width: 4.8rem;
+      border-radius: 50%;
+      padding: 1.2rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        font-size: 2rem;
+      }
+    }
+
+    &--person {
+      display: flex;
+      flex-direction: column;
+      padding: 0 .8rem;
+      width: calc(100% - 4.8rem);
+
+      span {
+        color: var(--app-primary);
+        font-weight: bold;
+        display: block;
+
+        margin-top: 2px;
+        font-size: 1.4rem;
+      }
+
+      h2 {
+        margin-top: 0;
+        color: var(--app-light);
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin-bottom: .2rem;
+        max-width: 100%;
+      }
+
+      time {
+        color: var(--app-dark-contrast);
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  &--body {
+    margin-top: .8rem;
+
+    p, span {
+      font-size: 1.4rem;
+    }
+
+    p {
+      color: var(--app-light);
+      margin: 0;
+      text-align: justify;
+      white-space: pre-line;
+    }
+
+    span {
+      color: var(--app-primary);
+      margin-top: .8rem;
+      font-weight: bold;
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  &--buttons {
+    display: flex;
+    margin-bottom: 1.6rem;
+
+    button:first-child {
+      margin-right: 1.2rem;
+    }
+
+    button:last-child {
+      --send-button-width: calc(100% - 6rem - 1.2rem);
+    }
+  }
+}

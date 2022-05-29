@@ -8,7 +8,7 @@ import { StorageAsyncResult } from '../../models/interfaces/storage-async-result
 import { CreateProjectPayload } from '../../models/payloads/create-project.payload';
 import { PaginatedProjectProxy } from '../../models/proxies/paginated-project.proxy';
 import { ProjectProxy } from '../../models/proxies/project.proxy';
-import { createProjectMockup, getAllProjectsMockup, getMyProjectsMockup, getProjectsByCategoryIdMockup } from './project.mockup';
+import { createProjectMockup, getAllProjectsMockup, getMyProjectsMockup, getProjectByIdMockup, getProjectsByCategoryIdMockup } from './project.mockup';
 
 //#endregion
 
@@ -67,6 +67,18 @@ export class ProjectInteractor {
   public async createProject(payload: CreateProjectPayload): Promise<HttpAsyncResult<ProjectProxy>> {
     if (environment.mockupEnabled)
       return await createProjectMockup(payload);
+
+    throw new Error('Não foi implementado');
+  }
+
+  /**
+   * Método que retorna as informações de um projeto
+   *
+   * @param projectId A identificação do projeto
+   */
+  public async getProjectById(projectId: number): Promise<HttpAsyncResult<ProjectProxy>> {
+    if (environment.mockupEnabled)
+      return await getProjectByIdMockup(projectId);
 
     throw new Error('Não foi implementado');
   }

@@ -3,6 +3,10 @@
   max-height: 100%;
   overflow-y: auto;
 
+  a {
+    text-decoration: none;
+  }
+
   app-project-item {
     margin-top: 2.4rem;
     display: flex;

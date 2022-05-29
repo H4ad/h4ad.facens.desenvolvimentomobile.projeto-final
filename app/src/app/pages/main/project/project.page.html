@@ -1,0 +1,35 @@
+<div class="project">
+  <div class="project--head">
+    <div class="project--head--avatar"
+         [style.background-color]="content?.personColor || 'gray'">
+      <img *ngIf="content?.personEmoji" [src]="content?.personEmoji" alt="A imagem de perfil do usuário">
+    </div>
+    <div class="project--head--person">
+      <h2 class="app--nowrap">
+        {{ content?.personName || 'Carregando...' }}
+      </h2>
+      <time>{{ (content?.createdAt | date: "dd 'de' MMMM 'às' HH:mm") || 'Carregando...' }}</time>
+      <span>R$ {{ (content?.budget | number: '1.2-2') || 'Carregando...' }}</span>
+    </div>
+  </div>
+  <div class="project--body">
+    <p>{{ content?.message || 'Buscando informações...' }}</p>
+
+    <ng-container *ngIf="content?.category">
+      <span class="app--nowrap">#{{ content?.category?.name }}</span>
+    </ng-container>
+  </div>
+  <div class="project--buttons">
+    <button [routerLink]="[backUrl]"
+            class="app--back-button ion-activatable">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-icon src="assets/images/left-arrow.svg"></ion-icon>
+    </button>
+    <a class="app--send-button ion-activatable ripple-parent"
+       href="mailto:{{ content?.email }}">
+      <ion-ripple-effect></ion-ripple-effect>
+      <span>Entrar em contato</span>
+      <ion-icon src="assets/images/right-arrow-white.svg"></ion-icon>
+    </a>
+  </div>
+</div>

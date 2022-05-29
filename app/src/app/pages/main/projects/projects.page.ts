@@ -6,7 +6,7 @@ import { map, throttleTime } from 'rxjs/operators';
 import { TrackablePage } from '../../../common/trackable.page';
 import { PaginatedProjectProxy } from '../../../models/proxies/paginated-project.proxy';
 import { ProjectProxy } from '../../../models/proxies/project.proxy';
-import { ProjectService } from '../../../services/comment/project.service';
+import { ProjectService } from '../../../services/project/project.service';
 
 //#endregion
 
@@ -26,7 +26,7 @@ export class ProjectsPage extends TrackablePage implements OnInit, OnDestroy {
    * Construtor padrão
    */
   constructor(
-    private readonly comment: ProjectService,
+    private readonly project: ProjectService,
   ) {
     super();
 
@@ -115,7 +115,7 @@ export class ProjectsPage extends TrackablePage implements OnInit, OnDestroy {
 
     const currentPage = this.paginatedProject?.currentPage || 0;
 
-    this.paginatedProject = await this.comment.getAllProjects(currentPage + 1, 4);
+    this.paginatedProject = await this.project.getAllProjects(currentPage + 1, 4);
     this.listAllProjects = [...this.listAllProjects, ...this.paginatedProject.items];
 
     this.isLoadingProjects = false;

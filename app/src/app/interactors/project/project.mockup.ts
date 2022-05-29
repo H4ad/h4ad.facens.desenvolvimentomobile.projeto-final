@@ -80,3 +80,17 @@ export async function createProjectMockup(payload: CreateProjectPayload): Promis
     success: getFakeProjectProxy(),
   };
 }
+
+
+/**
+ * Método que retorna as informações de um projeto
+ *
+ * @param projectId A identificação do projeto
+ */
+export async function getProjectByIdMockup(projectId: number): Promise<HttpAsyncResult<ProjectProxy>> {
+  await new Promise(resolve => setTimeout(resolve, 2_000));
+
+  return {
+    success: getFakeProjectProxy(),
+  };
+}

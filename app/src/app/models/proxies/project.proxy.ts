@@ -46,6 +46,11 @@ export interface ProjectProxy {
   budget: number;
 
   /**
+   * O e-mail para entrar em contato sobre o projeto
+   */
+  email: string;
+
+  /**
    * A categoria selecionada para o projetoo
    */
   category: CategoryProxy;
@@ -58,6 +63,7 @@ export interface ProjectProxy {
 export function getFakeProjectProxy(): ProjectProxy {
   return {
     id: 1,
+    email: '180618@facens.br',
     personName: randFullName(),
     personColor: rand(['#FF565E', '#3ED598', '#FFC542']),
     message: randParagraph({ length: 2 }).join('. '),

@@ -1,7 +1,7 @@
 //#region Imports
 
 import { Injectable } from '@angular/core';
-import { ProjectInteractor } from '../../interactors/comment/project.interactor';
+import { ProjectInteractor } from '../../interactors/project/project.interactor';
 import { CreateProjectPayload } from '../../models/payloads/create-project.payload';
 import { PaginatedProjectProxy } from '../../models/proxies/paginated-project.proxy';
 import { ProjectProxy } from '../../models/proxies/project.proxy';
@@ -97,6 +97,20 @@ export class ProjectService {
       return [false, 'Ocorreu um erro ao criar, por favor, tente novamente.'];
 
     return [true, 'Projeto criado com sucesso!'];
+  }
+
+  /**
+   * Método que retorna as informações de um projeto
+   *
+   * @param projectId A identificação do projeto
+   */
+  public async getProjectById(projectId: number): Promise<[ProjectProxy | null, string?]> {
+    const { success, error } = await this.interactor.getProjectById(projectId);
+
+    if (error)
+      return [null, 'Ocorreu um erro ao buscar as informações do projeto, por favor, tente novamente.'];
+
+    return [success!];
   }
 
   //#endregion
