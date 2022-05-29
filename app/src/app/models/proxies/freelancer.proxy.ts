@@ -25,9 +25,9 @@ export interface FreelancerProxy {
   color: string;
 
   /**
-   * O emoji para a pessoa
+   * O indice do avatar do usuário
    */
-  emoji: string;
+  avatarIndex: number;
 
   /**
    * A data de quando entrou
@@ -51,6 +51,6 @@ export function getFakeFreelanceProxy(): FreelancerProxy {
     email: randEmail(),
     createdAt: new Date().toISOString(),
     color: rand(['#FF565E', '#3ED598', '#FFC542']),
-    emoji: `/assets/images/avatar_${ randNumber({ min: 1, max: 4, precision: 1, fraction: 1 }) }.png`,
+    avatarIndex: randNumber({ min: 1, max: 4, precision: 1, fraction: 1 }),
   };
 }

@@ -1,0 +1,44 @@
+<div class="register">
+  <div class="app--header-create">
+    <div class="app--header-create--detail"></div>
+
+    <h1>Sobre mim</h1>
+    <p>Por favor, preencha os campos abaixo:</p>
+  </div>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="app--input">
+      <ion-icon name="person-outline"></ion-icon>
+      <input formControlName="name" placeholder="Seu nome" type="text">
+    </div>
+
+    <div class="register--avatar">
+      <ng-container *ngFor="let avatar of listAvatars; let i = index">
+        <div class="register--avatar--item--container"
+             (click)="formGroup.controls['avatarIndex'].setValue(i)">
+
+          <div [style.background-color]="avatar.personColor"
+               [class.register--avatar--item--selected]="formGroup.controls['avatarIndex'].value === i"
+               class="register--avatar--item ion-activatable">
+            <ion-ripple-effect></ion-ripple-effect>
+            <img [src]="avatar.personEmoji" alt="A imagem do personagem">
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="register--buttons">
+      <button [routerLink]="['/main/freelancers']" class="app--back-button ion-activatable">
+
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-icon src="assets/images/left-arrow.svg"></ion-icon>
+      </button>
+      <button class="app--send-button ion-activatable ripple-parent"
+              [disabled]="formGroup.status === 'INVALID' || isSendingForm"
+              type="submit">
+        <ion-ripple-effect></ion-ripple-effect>
+        <span>Atualizar</span>
+        <ion-icon src="assets/images/right-arrow-white.svg"></ion-icon>
+      </button>
+    </div>
+  </form>
+</div>
