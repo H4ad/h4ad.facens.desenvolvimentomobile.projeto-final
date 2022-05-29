@@ -39,26 +39,31 @@ Você pode acessar o figma do projeto [clicando aqui](https://www.figma.com/file
 </details>
 
 <details>
+  <summary>Tela de Listagem de Projetos por categoria</summary>
+  <img width="300px" src=".github/listar_projetos_por_categoria.png" alt="A tela de listar projetos de uma categoria">
+</details>
+
+<details>
   <summary>Tela de Listagem de Projetos</summary>
-  <p>Ainda estamos trabalhando nela.</p>
+  <img width="300px" src=".github/listar_projetos.png" alt="A tela de listar projetos">
 </details>
 
 <details>
   <summary>Tela de Visualização de um Projeto</summary>
-  <p>Ainda estamos trabalhando nela.</p>
+  <img width="300px" src=".github/visualizar_projeto.png" alt="A tela de visualizar um projeto">
 </details>
 
 <details>
   <summary>Tela de Adicionar um Projeto</summary>
-  <p>Ainda estamos trabalhando nela.</p>
+  <img width="300px" src=".github/criar_projeto.png" alt="A tela de adicionar projeto">
 </details>
 
 <details>
   <summary>Tela de Listar Freelancers</summary>
-  <p>Ainda estamos trabalhando nela.</p>
+  <img width="300px" src=".github/listar_freelancers.png" alt="A tela de listar freelancers">
 </details>
 
 <details>
-  <summary>Tela de Editar Perfil</summary>
-  <p>Ainda estamos trabalhando nela.</p>
+  <summary>Tela de Sobre Mim</summary>
+  <img width="300px" src=".github/sobre_mim.png" alt="A tela de sobre mim">
 </details>
