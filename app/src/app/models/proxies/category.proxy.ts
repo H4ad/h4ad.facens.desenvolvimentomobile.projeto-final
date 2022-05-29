@@ -2,6 +2,8 @@
 
 //#endregion
 
+import { rand, randProductCategory } from '@ngneat/falso';
+
 /**
  * A interface que representa as informações de uma categoria vindas da API
  */
@@ -30,7 +32,7 @@ export interface CategoryProxy {
 export function getFakeCategoryProxy(): CategoryProxy {
   return {
     id: 1,
-    name: `${ Math.random().toString(16).slice(2) }`,
-    color: '#FFC542',
+    name: randProductCategory(),
+    color: rand(['#FF565E', '#3ED598', '#FFC542']),
   };
 }

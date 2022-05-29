@@ -96,7 +96,7 @@ export class CreateCategoryPage {
     };
 
     const loading = await this.loading.create({
-      cssClass: 'bird--loading',
+      cssClass: 'app--loading',
     });
 
     await loading.present();

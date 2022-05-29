@@ -93,7 +93,7 @@ export class RegisterPage {
     const payload = this.formGroup.getRawValue();
 
     const loading = await this.loading.create({
-      cssClass: 'bird--loading',
+      cssClass: 'app--loading',
     });
 
     await loading.present();

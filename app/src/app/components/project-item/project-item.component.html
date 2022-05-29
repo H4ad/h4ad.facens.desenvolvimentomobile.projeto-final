@@ -1,0 +1,22 @@
+<div class="project">
+  <div class="project--head">
+    <div class="project--head--avatar"
+         [style.background-color]="content.personColor">
+      <img [src]="content.personEmoji" alt="A imagem de perfil do usuário">
+    </div>
+    <div class="project--head--person">
+      <h2 class="app--nowrap">
+        {{ content.personName }}
+      </h2>
+      <time>{{ content.createdAt | date: "dd 'de' MMMM 'às' HH:mm" }}</time>
+      <span>R$ {{ content.budget | number: '1.2-2' }}</span>
+    </div>
+  </div>
+  <div class="project--body">
+    <p>{{ content.message }}</p>
+
+    <ng-container *ngIf="content.category">
+      <span class="app--nowrap">#{{ content.category.name }}</span>
+    </ng-container>
+  </div>
+</div>

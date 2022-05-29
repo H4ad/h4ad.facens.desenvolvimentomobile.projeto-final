@@ -1,0 +1,11 @@
+.projects {
+  padding: 0 2.4rem;
+  max-height: 100%;
+  overflow-y: auto;
+
+  app-project-item {
+    margin-top: 2.4rem;
+    display: flex;
+    margin-bottom: 1.6rem;
+  }
+}

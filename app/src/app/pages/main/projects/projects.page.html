@@ -1,0 +1,5 @@
+<div class="projects" (scroll)="onScroll($event)">
+  <ng-container *ngFor="let project of listAllProjects; trackBy: trackById">
+    <app-project-item [content]="project"></app-project-item>
+  </ng-container>
+</div>

@@ -1,4 +1,4 @@
-.bird--add-item {
+.app--add-item {
   border: 2px dashed var(--app-primary-dark);
   border-radius: 25px;
   padding: 1.6rem .5rem;
@@ -22,7 +22,7 @@
   }
 }
 
-.bird--back-button {
+.app--back-button {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
@@ -43,7 +43,7 @@
   }
 }
 
-.bird--send-button {
+.app--send-button {
   background: linear-gradient(180deg, #40DF9F 0%, #3ED598 100%);
   box-shadow: 0 2px 4px rgba(15, 218, 137, 0.3);
   border-radius: 12px;

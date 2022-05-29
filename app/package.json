@@ -20,6 +20,7 @@
     "@angular/router": "~13.3.0",
     "@ionic/angular": "^6.1.6",
     "@ionic/storage": "^3.0.6",
+    "@ngneat/falso": "^5.4.0",
     "normalize.css": "^8.0.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
