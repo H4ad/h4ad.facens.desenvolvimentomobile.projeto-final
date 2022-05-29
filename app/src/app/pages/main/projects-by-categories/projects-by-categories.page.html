@@ -1,4 +1,11 @@
 <div class="projects" (scroll)="onScroll($event)">
+  <div class="projects--item">
+    <div [routerLink]="['/main/categories', categoryId, 'projects', 'create']" class="app--add-item ion-activatable">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-icon src="assets/images/add_icon.svg"></ion-icon>
+      <p>Adicionar novo projeto</p>
+    </div>
+  </div>
   <ng-container *ngFor="let project of listProjects; trackBy: trackById">
     <a [routerLink]="['/main/projects', project.id]" [queryParams]="{ backUrl: '/main/categories/' + categoryId + '/projects' }">
       <app-project-item [content]="project"></app-project-item>

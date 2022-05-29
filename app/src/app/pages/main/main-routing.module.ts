@@ -16,7 +16,7 @@ const routes: Routes = [
       { path: 'projects', loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule) },
       { path: 'projects/:projectId', loadChildren: () => import('./project/project.module').then(m => m.ProjectModule) },
       { path: 'categories/:categoryId/projects', loadChildren: () => import('./projects-by-categories/projects-by-categories.module').then(m => m.ProjectsByCategoriesModule) },
-      // { path: 'categories/:categoryId/comment', loadChildren: () => import('./create-comment/create-comment.module').then(m => m.CreateCommentPageModule) },
+      { path: 'categories/:categoryId/projects/create', loadChildren: () => import('./create-project/create-project.module').then(m => m.CreateProjectModule) },
       // { path: 'my-comments', loadChildren: () => import('./my-comments/my-comments.module').then(m => m.MyCommentsPageModule) },
     ],
   },

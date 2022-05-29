@@ -1,0 +1,58 @@
+<div class="project">
+  <div class="app--header-create">
+    <div class="app--header-create--detail"></div>
+
+    <h1>Criar Projeto</h1>
+    <p>Por favor, preencha os campos abaixo:</p>
+  </div>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="app--input">
+      <ion-icon name="person-outline"></ion-icon>
+      <input formControlName="personName" placeholder="Seu nome" type="text">
+    </div>
+
+    <div class="app--input">
+      <ion-icon name="mail-outline"></ion-icon>
+      <input formControlName="email" placeholder="Seu e-mail" type="email">
+    </div>
+
+    <div class="app--input">
+      <ion-icon name="cash-outline"></ion-icon>
+      <input formControlName="budget" placeholder="Até quanto você está disposto a pagar?" type="number">
+    </div>
+
+    <div class="project--avatar">
+      <ng-container *ngFor="let avatar of listAvatars; let i = index">
+        <div class="project--avatar--item--container"
+             (click)="formGroup.controls['personAvatarIndex'].setValue(i)">
+
+          <div [style.background-color]="avatar.personColor"
+               [class.project--avatar--item--selected]="formGroup.controls['personAvatarIndex'].value === i"
+               class="project--avatar--item ion-activatable">
+            <ion-ripple-effect></ion-ripple-effect>
+            <img [src]="avatar.personEmoji" alt="A imagem do personagem">
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="app--input">
+      <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+      <textarea formControlName="message" placeholder="Descreva o que você precisa que o Freelancer faça para você. Quanto mais detalhes, mais facilmente você encontrará alguém para resolver o seu problema. "></textarea>
+    </div>
+
+    <div class="project--buttons">
+      <button [routerLink]="['/main/projects', categoryId]" class="app--back-button ion-activatable">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-icon src="assets/images/left-arrow.svg"></ion-icon>
+      </button>
+      <button class="app--send-button ion-activatable"
+              [disabled]="formGroup.status === 'INVALID' || isSendingForm"
+              type="submit">
+        <ion-ripple-effect></ion-ripple-effect>
+        <span>Criar</span>
+        <ion-icon src="assets/images/right-arrow-white.svg"></ion-icon>
+      </button>
+    </div>
+  </form>
+</div>
